@@ -1,7 +1,7 @@
 locals {
     comman_tags = {
-        project = "roboshop"
-        environment = terraform.workspace
+        Project = var.project
+        Environment = var.environment
         terraform = "true"
 
     }
