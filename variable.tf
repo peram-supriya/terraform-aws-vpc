@@ -15,13 +15,17 @@ variable "vpc_cidr" {
 }
 
 variable "vpc_tags" {
-    type = map()
-    default = {}
+    type = map(string)
+    default = {
+        project = "devops"
+    }
 }
 
 variable "igw_tags" {
     type = map()
-    default = {}
+    default = {
+        project = "devops"
+    }
   
 }
 
