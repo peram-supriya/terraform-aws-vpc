@@ -88,6 +88,6 @@ variable "nat_gate_way_tags" {
 
 variable "is_peering_required" {
     default = false
-    type = bool()
+    type = bool
   
 }
