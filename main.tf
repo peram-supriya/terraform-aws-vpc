@@ -93,7 +93,7 @@ resource "aws_route_table" "private" {
 
 #database route
 
-resource "aws_route_table" "private" {
+resource "aws_route_table" "database" {
   vpc_id = aws_vpc.main.id
 
   tags = merge(
