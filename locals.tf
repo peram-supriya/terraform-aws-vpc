@@ -5,7 +5,15 @@ locals {
     }
 
     final_vpc_tags = merge(local.common_tags, {
+        Name = "${var.project}"
+    })
+
+    final_igw_tags = merge(local.common_tags, {
         Name = "${var.project}-${var.environment}"
     })
+
+    az_zones = slice(data.aws_availability_zones.available.names, 0, 2)
+
+    
 }
 
