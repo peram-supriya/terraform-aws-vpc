@@ -45,6 +45,37 @@ resource "aws_subnet" "database" {
     })
 }
 
+resource "aws_route_table" "public" {
+  vpc_id = aws_vpc.main.id
+
+ 
+
+  tags = merge(local.common_tags, {
+        Name = "${var.project}-${var.environment}-public"
+    })
+}
+
+resource "aws_route_table" "private" {
+  vpc_id = aws_vpc.main.id
+
+ 
+
+  tags = merge(local.common_tags, {
+        Name = "${var.project}-${var.environment}-private"
+    })
+}
+
+resource "aws_route_table" "database" {
+  vpc_id = aws_vpc.main.id
+
+ 
+
+  tags = merge(local.common_tags, {
+        Name = "${var.project}-${var.environment}-database"
+    })
+}
+
+
 resource "aws_route" "public" {
   route_table_id            = aws_route_table.public.id
   gateway_id                = aws_internet_gateway.gw.id

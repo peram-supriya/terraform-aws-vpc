@@ -51,3 +51,8 @@ variable "database_subnet_tags" {
     type = map(string)
     default = {}
 }
+
+variable "is_peer_connection_required" {
+    type = bool
+    default = false
+}
